@@ -3,5 +3,5 @@ Rails.application.routes.draw do
 
   root 'pages#home' #nema potrebe za dodatkom _controller, jer se u Rubiju podrazumeva da je to kontroler
   get 'about', to: 'pages#about'
-  resources :articles, only: [:show]
+  resources :articles, only: [:show, :index]
 end
