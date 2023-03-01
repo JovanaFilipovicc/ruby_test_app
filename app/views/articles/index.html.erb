@@ -15,8 +15,10 @@
 <td><%= article.description %></td>
 <td><%= link_to 'Show', article_path(article)%></td>
 <td><%= link_to 'Edit', edit_article_path(article) %></td> <%# AUTOMATSKI CE POSMATRATI KAO DA TRAZIMO ID, BEZ OBZIRA STO NISMO NAVELI article.id %>
-<td><%= link_to 'Delete', article_path(article), method: :delete %></td> <%# SPECIFICIRAMO METODU, JER ZELIMO DA ODE NA DELETE REQUEST NAKON KLIKA, NE GET REQUEST %>
+<td><%= link_to 'Delete', article_path(article), method: :delete, data: {confirm: "Are you sure you want to delete article?"} %></td> <%# SPECIFICIRAMO METODU, JER ZELIMO DA ODE NA DELETE REQUEST NAKON KLIKA, NE GET REQUEST %>
 </tr>
 <% end %>
 </tbody>
 </table>
+
+<p><%= link_to 'Create new article', new_article_path %></p>
